@@ -1,7 +1,9 @@
 class Solution:
-    def findNumbers(self, nums: List[int]) -> int:
-        count = 0
-        for num in nums:
-            if len(str(abs(num))) % 2 == 0:
-                count += 1
-        return count
+    def average(self, salary: list[int]) -> float:
+        min_salary = min(salary)
+        max_salary = max(salary)
+        total_salary = sum(salary)
+        total_salary -= min_salary
+        total_salary -= max_salary
+        n = len(salary) - 2
+        return total_salary / n

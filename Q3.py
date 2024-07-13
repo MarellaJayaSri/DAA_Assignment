@@ -1,5 +1,11 @@
-def find_char(s, k):
-    for char in s:
-        if char == k:
-            return True
-    return False
+class Solution:
+    def numberGame(self, nums: list[int]) -> List[int]:
+        arr = []
+        while nums:
+            alice_min = min(nums)
+            nums.remove(alice_min)
+            bob_min = min(nums)
+            nums.remove(bob_min)
+            arr.append(bob_min)
+            arr.append(alice_min)
+        return arr
